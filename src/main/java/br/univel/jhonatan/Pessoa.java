@@ -31,13 +31,3 @@ public class Pessoa {
 		this.nome = nome;
 	}
 }
-
-/*
-  		<dependency>
-			<groupId>net.sf.jasperreports</groupId>
-			<artifactId>jasperreports</artifactId>
-			<version>6.3.1</version>
-		</dependency>
-
-
- */
