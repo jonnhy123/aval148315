@@ -11,16 +11,16 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
 public class PainelPessoaBase extends JPanel {
-	private JTextField txtId;
-	private JTextField txtNome;
-	private JTextField textField;
-	private JTextField txtTelefone;
-	private JTable table;
-	private JButton btnNovo;
-	private JButton btnSalvar;
-	private JButton btnListarTodos;
-	private JButton btnExcluirTodos;
-	private JButton btnExcluirItem;
+	protected JTextField txtId;
+	protected JTextField txtNome;
+	protected JTextField txtIdade;
+	protected JTextField txtTelefone;
+	protected JTable table;
+	protected JButton btnNovo;
+	protected JButton btnSalvar;
+	protected JButton btnListarTodos;
+	protected JButton btnExcluirTodos;
+	protected JButton btnExcluirItem;
 
 	/**
 	 * Create the panel.
@@ -90,14 +90,14 @@ public class PainelPessoaBase extends JPanel {
 		gbc_lblIdade.gridy = 2;
 		panel.add(lblIdade, gbc_lblIdade);
 		
-		textField = new JTextField();
-		GridBagConstraints gbc_textField = new GridBagConstraints();
-		gbc_textField.anchor = GridBagConstraints.WEST;
-		gbc_textField.insets = new Insets(0, 0, 5, 0);
-		gbc_textField.gridx = 1;
-		gbc_textField.gridy = 2;
-		panel.add(textField, gbc_textField);
-		textField.setColumns(5);
+		txtIdade = new JTextField();
+		GridBagConstraints gbc_txtIdade = new GridBagConstraints();
+		gbc_txtIdade.anchor = GridBagConstraints.WEST;
+		gbc_txtIdade.insets = new Insets(0, 0, 5, 0);
+		gbc_txtIdade.gridx = 1;
+		gbc_txtIdade.gridy = 2;
+		panel.add(txtIdade, gbc_txtIdade);
+		txtIdade.setColumns(5);
 		
 		JLabel lblTelefone = new JLabel("Telefone:");
 		GridBagConstraints gbc_lblTelefone = new GridBagConstraints();

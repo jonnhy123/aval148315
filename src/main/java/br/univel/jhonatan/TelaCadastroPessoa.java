@@ -11,10 +11,13 @@ import java.awt.GridBagConstraints;
 import javax.swing.JButton;
 import javax.swing.JTabbedPane;
 import java.awt.Insets;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaCadastroPessoa extends JFrame {
 
 	private JPanel contentPane;
+	private JTabbedPane tabbedPane;
 
 	/**
 	 * Launch the application.
@@ -63,12 +66,17 @@ public class TelaCadastroPessoa extends JFrame {
 		panel.setLayout(gbl_panel);
 		
 		JButton btnPessoa = new JButton("Pessoa");
+		btnPessoa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				adicionarAbaPessoa();
+			}
+		});
 		GridBagConstraints gbc_btnPessoa = new GridBagConstraints();
 		gbc_btnPessoa.gridx = 0;
 		gbc_btnPessoa.gridy = 0;
 		panel.add(btnPessoa, gbc_btnPessoa);
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		GridBagConstraints gbc_tabbedPane = new GridBagConstraints();
 		gbc_tabbedPane.fill = GridBagConstraints.BOTH;
 		gbc_tabbedPane.gridx = 0;
@@ -76,4 +84,20 @@ public class TelaCadastroPessoa extends JFrame {
 		contentPane.add(tabbedPane, gbc_tabbedPane);
 	}
 
+	protected void adicionarAbaPessoa() {
+		JPanel painelPessoa = new PainelPessoa();
+		
+		final PainelWrapper wrapper = new PainelWrapper();
+		wrapper.setConteudo(painelPessoa);
+		wrapper.setTitulo("Cadastro de Pessoas");
+		
+		wrapper.setAcaoFechar(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				tabbedPane.remove(wrapper);
+			}
+		});
+		
+		tabbedPane.addTab("Pessoa", wrapper);
+	}
 }

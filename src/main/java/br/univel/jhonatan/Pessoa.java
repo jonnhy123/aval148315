@@ -1,15 +1,15 @@
 package br.univel.jhonatan;
 
 public class Pessoa {
-	private long id;
+	private int id;
 	private int idade;
 	private String telefone;
 	private String nome;
 	
-	public long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public int getIdade() {
