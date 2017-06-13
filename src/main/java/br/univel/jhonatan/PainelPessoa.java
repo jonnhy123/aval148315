@@ -38,6 +38,28 @@ public class PainelPessoa extends PainelPessoaBase{
 				excluirItem();
 			}
 		});
+		btnImprimir.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				imprimir();
+			}
+		});
+		btnExportar.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				exportar();
+			}
+		});
+	}
+
+	protected void exportar() {
+		ReportManager rm = new ReportManager();
+		rm.exportar();
+	}
+
+	protected void imprimir() {
+		ReportManager rm = new ReportManager();
+		rm.imprimir();
 	}
 
 	protected void excluirItem() {

@@ -9,6 +9,8 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class PainelPessoaBase extends JPanel {
 	protected JTextField txtId;
@@ -21,6 +23,8 @@ public class PainelPessoaBase extends JPanel {
 	protected JButton btnListarTodos;
 	protected JButton btnExcluirTodos;
 	protected JButton btnExcluirItem;
+	protected JButton btnImprimir;
+	protected JButton btnExportar;
 
 	/**
 	 * Create the panel.
@@ -117,53 +121,70 @@ public class PainelPessoaBase extends JPanel {
 		
 		JPanel panel_1 = new JPanel();
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.anchor = GridBagConstraints.EAST;
 		gbc_panel_1.insets = new Insets(0, 0, 5, 0);
-		gbc_panel_1.fill = GridBagConstraints.VERTICAL;
+		gbc_panel_1.fill = GridBagConstraints.BOTH;
 		gbc_panel_1.gridx = 0;
 		gbc_panel_1.gridy = 1;
 		add(panel_1, gbc_panel_1);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
 		gbl_panel_1.columnWidths = new int[]{0, 0, 0, 0, 0, 0};
-		gbl_panel_1.rowHeights = new int[]{0, 0};
+		gbl_panel_1.rowHeights = new int[]{0, 0, 0};
 		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_1.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
 		panel_1.setLayout(gbl_panel_1);
 		
 		btnNovo = new JButton("Novo");
 		GridBagConstraints gbc_btnNovo = new GridBagConstraints();
-		gbc_btnNovo.anchor = GridBagConstraints.EAST;
-		gbc_btnNovo.insets = new Insets(0, 0, 0, 5);
+		gbc_btnNovo.insets = new Insets(0, 0, 5, 5);
 		gbc_btnNovo.gridx = 0;
 		gbc_btnNovo.gridy = 0;
 		panel_1.add(btnNovo, gbc_btnNovo);
 		
 		btnSalvar = new JButton("Salvar");
 		GridBagConstraints gbc_btnSalvar = new GridBagConstraints();
-		gbc_btnSalvar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnSalvar.insets = new Insets(0, 0, 5, 5);
 		gbc_btnSalvar.gridx = 1;
 		gbc_btnSalvar.gridy = 0;
 		panel_1.add(btnSalvar, gbc_btnSalvar);
 		
 		btnListarTodos = new JButton("Listar Todos");
 		GridBagConstraints gbc_btnListarTodos = new GridBagConstraints();
-		gbc_btnListarTodos.insets = new Insets(0, 0, 0, 5);
+		gbc_btnListarTodos.insets = new Insets(0, 0, 5, 5);
 		gbc_btnListarTodos.gridx = 2;
 		gbc_btnListarTodos.gridy = 0;
 		panel_1.add(btnListarTodos, gbc_btnListarTodos);
 		
 		btnExcluirTodos = new JButton("Excluir Todos");
 		GridBagConstraints gbc_btnExcluirTodos = new GridBagConstraints();
-		gbc_btnExcluirTodos.insets = new Insets(0, 0, 0, 5);
+		gbc_btnExcluirTodos.insets = new Insets(0, 0, 5, 5);
 		gbc_btnExcluirTodos.gridx = 3;
 		gbc_btnExcluirTodos.gridy = 0;
 		panel_1.add(btnExcluirTodos, gbc_btnExcluirTodos);
 		
 		btnExcluirItem = new JButton("Excluir Item");
 		GridBagConstraints gbc_btnExcluirItem = new GridBagConstraints();
+		gbc_btnExcluirItem.insets = new Insets(0, 0, 5, 0);
 		gbc_btnExcluirItem.gridx = 4;
 		gbc_btnExcluirItem.gridy = 0;
 		panel_1.add(btnExcluirItem, gbc_btnExcluirItem);
+		
+		btnImprimir = new JButton("Imprimir");
+		btnImprimir.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		GridBagConstraints gbc_btnImprimir = new GridBagConstraints();
+		gbc_btnImprimir.insets = new Insets(0, 0, 0, 5);
+		gbc_btnImprimir.gridx = 0;
+		gbc_btnImprimir.gridy = 1;
+		panel_1.add(btnImprimir, gbc_btnImprimir);
+		
+		btnExportar = new JButton("Exportar");
+		GridBagConstraints gbc_btnExportar = new GridBagConstraints();
+		gbc_btnExportar.insets = new Insets(0, 0, 0, 5);
+		gbc_btnExportar.gridx = 1;
+		gbc_btnExportar.gridy = 1;
+		panel_1.add(btnExportar, gbc_btnExportar);
 		
 		JPanel panel_2 = new JPanel();
 		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
